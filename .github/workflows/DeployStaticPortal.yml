@@ -15,6 +15,14 @@ jobs:
     - uses: actions/checkout@v4
       name : checkout-repo
       id: checkout-repo  
+
+    - name: Log available secrets
+      run: |
+        echo "Checking available secrets..."
+        echo "API_KEY: ${{ secrets.API_KEY }}"
+        echo "NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}"
+        echo "NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}"
+        echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"  
       
     - name: Zip files
       run: zip -qq -r portal-input.zip .
