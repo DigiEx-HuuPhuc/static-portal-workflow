@@ -90,14 +90,14 @@ jobs:
     - name: Log error if not successful
       if: ${{steps.generate-portal.outputs.HTTP_CODE != '200' && steps.generate-portal.outputs.CONTENT_TYPE != 'application/zip'}}
       run: |
-        echo "The Portal Generation request failed with response code ${{steps.generate-portal.outputs.HTTP_CODE}} and message $(cat portal)"; \
+        echo "The Portal Generation request failed with response codeeeeeeeeeeeee ${{steps.generate-portal.outputs.HTTP_CODE}} and message $(cat portal)"; \
         exit 1
         
     # Fail job if API response is not 200 and is a zip file
     - name: Log error if not successful
       if: ${{steps.generate-portal.outputs.HTTP_CODE != '200' && steps.generate-portal.outputs.CONTENT_TYPE == 'application/zip'}}
       run: |
-        echo "The Portal Generation request failed with response code ${{steps.generate-portal.outputs.HTTP_CODE}}; \
+        echo "The Portal Generation request failed with response code but in a zipe file ${{steps.generate-portal.outputs.HTTP_CODE}}; \
         exit 1
     
       
